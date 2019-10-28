@@ -1,0 +1,82 @@
+3. I will go for facade since it is a class or a group of classes that hiding internal implementation from the user.
+It simplifies the structure of system so that user does interact only with a higher level interface that internally interacts with the subsystem.
+Here Play(), Forward(),Rewind() can assessable from the user but only owner knows how it works internally.
+
+  public interface VideoPlayer {
+        void Play();
+
+        void Forward();
+
+        void Rewind();
+    }
+
+    public class XPlayer implements VideoPlayer {
+        @Override
+        public void Play() {
+    //todo
+
+        }
+
+        @Override
+        public void Forward() {
+    //todo
+
+        }
+
+        @Override
+        public void Rewind() {
+    //todo
+
+        }
+    }
+
+    public class Yplayer implements VideoPlayer {
+    //todo
+        @Override
+        public void Play() {
+    //todo
+
+        }
+
+        @Override
+        public void Forward() {
+    //todo
+
+        }
+
+        @Override
+        public void Rewind() {
+    //todo
+
+        }
+    }
+
+    public class VideoPlayerMaker(){
+        XPlayer xPlayer;
+        Yplayer yplayer;
+
+        public Void VideoPlayerMaker () {
+        xPlayer = new XPlayer();
+        yplayer = new Yplayer();
+    }
+
+        public void XVideoPlayerMaker () {
+        xPlayer.Play();
+        xPlayer.Forward();
+        xPlayer.Rewind();
+    }
+        public void YVideoPlayerMaker () {
+        yplayer.Play();
+        yplayer.Forward();
+        yplayer.Rewind();
+    }
+    }
+
+    public class FacadePatternDemo {
+        public static void main(String[] args) {
+            VideoPlayerMaker videoPlayerMaker = new VideoPlayerMaker();
+
+            videoPlayerMaker.XVideoPlayerMaker();
+            videoPlayerMaker.YVideoPlayerMaker();
+        }
+    }
